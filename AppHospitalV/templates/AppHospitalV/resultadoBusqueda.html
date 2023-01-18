@@ -1,0 +1,17 @@
+{% extends "AppHospitalV/padre.html" %}
+
+{% load static %}
+  
+ {% if profesionales %}
+
+<p> Estamos buscando la: {{profesion}} </p>
+{% if profesionales %}
+<ul>
+{% for staff in profesionales %}
+   <li> {{staff.nombre}} </li>
+   <li> {{staff.apellido}} </li>
+   <li> {{staff.email}} </li>
+   <li> {{staff.profesion}} </li>
+{% endfor %}
+</ul>
+{% endif %}

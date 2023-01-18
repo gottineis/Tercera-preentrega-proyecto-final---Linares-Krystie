@@ -1,0 +1,37 @@
+{% extends 'AppHospitalV/padre.html' %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+
+    <h1>Inicio - Bienvenido/a</h1>
+  
+
+    <h3>Buscar un profesional:</h3>
+
+    <form action="/AppHospitalV/buscar/" method="GET">
+
+        <input type="text" name="profesional">
+
+        <input type="submit" value="Buscar">
+
+
+    </form>
+
+    {% if profesionales %}
+
+    <p> Estamos buscando la: {{profesion}} </p>
+    
+    <ul>
+    {% for staff in profesionales %}
+        <li> {{staff.nombre}} </li>
+        <li> {{staff.apellido}} </li>
+        <li> {{staff.email}} </li>
+        <li> {{staff.profesion}} </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+{% endblock %}
